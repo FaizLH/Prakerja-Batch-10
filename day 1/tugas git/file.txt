@@ -1,1 +1,5 @@
 ngulang lagi dari branch master
+ini penambahan dari branch development
+ini fixing merge featureB ke development
+ini penambahan featureA
+ini penambahan featureB
