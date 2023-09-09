@@ -1,3 +1,5 @@
 ini dari branch master
 ini dari branch development
+ini fixing conflict merge penambahan feature
 ini penambahan featureA
+ini penambahan featureB
