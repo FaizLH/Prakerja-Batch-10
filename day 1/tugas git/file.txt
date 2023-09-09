@@ -1,3 +1,5 @@
 ini dari branch master
 ini penambahan dari branch development
+ini perbaikan conflict penambahan feature
 penambahan featureA
+penambahan featureB
