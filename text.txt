@@ -1,3 +1,4 @@
 penambahan isi file dari metode remote
 ini perubahan dari metode remote
 ini perubahan dari metode clone
+ini conflict dari metode clone
