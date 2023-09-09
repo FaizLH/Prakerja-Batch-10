@@ -1,3 +1,4 @@
+perubahan di branch develop dan featureA
 penambahan isi file dari metode remote
 ini perubahan dari metode remote
 ini perubahan dari metode clone
