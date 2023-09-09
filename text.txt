@@ -1,4 +1,7 @@
+perubahan di branch develop dan featureA
 penambahan isi file dari metode remote
 ini perubahan dari metode remote
 ini perubahan dari metode clone
+ini penggabungan conflict
+ini conflict dari metode clone
 conflict dari remote
