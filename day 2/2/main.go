@@ -1,3 +1,4 @@
+// menentukan bilangan kelipatan 7
 package main
 
 import "fmt"

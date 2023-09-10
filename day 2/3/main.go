@@ -1,3 +1,4 @@
+// menghitung luas trapesium
 package main
 
 import "fmt"
