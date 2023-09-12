@@ -4,46 +4,63 @@ package main
 import "fmt"
 
 type Student struct {
-	name  string
-	score int
+	Name  []string
+	Score []int
+}
+
+func (paraSiswa Student) NilaiRata() string {
+	var sum int
+	for _, v := range paraSiswa.Score {
+		sum += v
+	}
+	result := float32(sum) / float32(len(paraSiswa.Score))
+	return fmt.Sprintf("nilai rata-rata siswa : %v", result)
+}
+
+func (paraSiswa Student) Minimum() string {
+	nilaiTerendah := paraSiswa.Score[0]
+	indexMinimum := 0
+	for i, v := range paraSiswa.Score {
+		if v < nilaiTerendah {
+			nilaiTerendah = v
+			indexMinimum = i
+		}
+	}
+	return fmt.Sprintf("nilai terendah siswa : %v (%v)", paraSiswa.Name[indexMinimum], nilaiTerendah)
+}
+func (paraSiswa Student) Maksimum() string {
+	nilaiTertinggi := paraSiswa.Score[0]
+	indexMaksimum := 0
+	for i, v := range paraSiswa.Score {
+		if v < nilaiTertinggi {
+			nilaiTertinggi = v
+			indexMaksimum = i
+		}
+	}
+	return fmt.Sprintf("nilai tertinggi siswa : %v (%v)", paraSiswa.Name[indexMaksimum], nilaiTertinggi)
 }
 
 func main() {
-	var paraSiswa = []Student{
-		{name: "Rizki", score: 80},
-		{name: "Kobar", score: 75},
-		{name: "Ismail", score: 70},
-		{name: "Umam", score: 75},
-		{name: "Yopan", score: 60},
+	fmt.Println("Input :")
+	var paraSiswa Student
+
+	for i := 1; i <= 5; i++ {
+		fmt.Printf("input %v nama siswa : ", i)
+		paraSiswa.Name = append(paraSiswa.Name, "")
+		fmt.Scanln(&paraSiswa.Name[i-1])
+		fmt.Printf("input %v nilai siswa : ", i)
+		paraSiswa.Score = append(paraSiswa.Score, 0)
+		fmt.Scanln(&paraSiswa.Score[i-1])
 	}
-	// variabel persiapan
-	totalScore := 0
-	totalSiswa := len(paraSiswa)
-	nilaiTerendah := 100
-	siswaNilaiTerendah := ""
-	nilaiTertinggi := 0
-	siswaNilaiTertinggi := ""
-
-	for _, siswa := range paraSiswa {
-		totalScore += siswa.score
-		skor := siswa.score
-
-		// mencari siswa dengan nilai terendah
-		if skor < nilaiTerendah {
-			nilaiTerendah = skor
-			siswaNilaiTerendah = siswa.name
-		}
-
-		// mencari siswa dengan nilai tertinggi
-		if skor > nilaiTertinggi {
-			nilaiTertinggi = skor
-			siswaNilaiTertinggi = siswa.name
-		}
-	}
-	// mencari nilai rata-rata
-	nilaiRata := totalScore / totalSiswa
-
-	fmt.Println("nilai rata-rata :", nilaiRata)
-	fmt.Println("nilai terendah :", siswaNilaiTerendah, nilaiTerendah)
-	fmt.Println("nilai tertinggi :", siswaNilaiTertinggi, nilaiTertinggi)
+	// Inputnya
+	// Rizki 80
+	// Kobar 75
+	// Ismail 70
+	// Umam 75
+	// Yopan 60
+	fmt.Println(paraSiswa)
+	fmt.Println("Output :")
+	fmt.Println(paraSiswa.NilaiRata())
+	fmt.Println(paraSiswa.Minimum())
+	fmt.Println(paraSiswa.Maksimum())
 }
